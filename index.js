@@ -1,8 +1,8 @@
-import Router from "./Router";
+import Router from "./router/Router";
 
 const router = new Router();
 
-const route = process.argv[2].substring(1);
+const route = process.argv[2];
 
 if (!route) {
   throw new Error(
@@ -10,4 +10,4 @@ if (!route) {
   );
 }
 
-router.delegate(route);
+router.delegate(route.substring(1));

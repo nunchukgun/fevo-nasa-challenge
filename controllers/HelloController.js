@@ -1,4 +1,5 @@
 import AbstractController from "./AbstractController";
+import getUrlTail from "../util/getUrlTail";
 
 class HelloController extends AbstractController {
   constructor() {
@@ -6,7 +7,7 @@ class HelloController extends AbstractController {
   }
 
   async handleUrl(url) {
-    const urlTail = url.substring(1).split("/")[1];
+    const urlTail = getUrlTail(url);
     switch (urlTail) {
       case "say-hi":
         return this._sayHi();
