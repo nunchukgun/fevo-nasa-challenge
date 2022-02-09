@@ -1,0 +1,31 @@
+{
+  "name": "fevo-nasa-challenge",
+  "version": "1.0.0",
+  "description": "This challenge is being submitted by John McKeever to FEVO as is based on the prompt found at: https://github.com/igno/nasa-images",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./index.js",
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "tc": "npm run test-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nunchukgun/fevo-nasa-challenge.git"
+  },
+  "author": "John McKeever",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nunchukgun/fevo-nasa-challenge/issues"
+  },
+  "homepage": "https://github.com/nunchukgun/fevo-nasa-challenge#readme",
+  "dependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "axios": "^0.25.0",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1"
+  }
+}
