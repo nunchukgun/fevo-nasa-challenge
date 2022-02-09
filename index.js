@@ -1,5 +1,7 @@
 import Router from "./router/Router";
 
+global.photoCache = {};
+
 const router = new Router();
 
 const route = process.argv[2];
@@ -10,4 +12,4 @@ if (!route) {
   );
 }
 
-router.delegate(route.substring(1));
+router.delegate(route.substring(1)).then((res) => console.dir(res));

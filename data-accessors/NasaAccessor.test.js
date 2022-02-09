@@ -12,19 +12,15 @@ describe("NasaAccessor", () => {
     it("fetches the first 3 photos for the given earthDate if that data is not already cached and caches them", async () => {
       axios.get.mockResolvedValueOnce({
         data: {
-          photos: [{ a: 1 }, { b: 2 }, { c: 3 }, { d: 4 }],
+          photos: [{ img_src: 1 }, { img_src: 2 }, { img_src: 3 }, { d: 4 }],
         },
       });
-      const expected = [{ a: 1 }, { b: 2 }, { c: 3 }];
+      const expected = [1, 2, 3];
       const input = "2020-12-25";
       const result = await nasaAccessor.fetchMarsPhotos(input);
 
       expect(result).toEqual(expected);
-      expect(global.photoCache["2020-12-25"]).toEqual([
-        { a: 1 },
-        { b: 2 },
-        { c: 3 },
-      ]);
+      expect(global.photoCache["2020-12-25"]).toEqual(expected);
     });
 
     it("retrieves previously cached photos instead of hitting the NASA API", async () => {

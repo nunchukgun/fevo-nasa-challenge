@@ -12,7 +12,9 @@ class NasaAccessor {
     );
     const { photos } = response.data;
 
-    const firstThreePhotos = photos.slice(0, 3);
+    const firstThreePhotos = photos
+      .slice(0, 3)
+      .map((photo) => photo["img_src"]);
     global.photoCache[earthDate] = firstThreePhotos;
 
     return firstThreePhotos;
