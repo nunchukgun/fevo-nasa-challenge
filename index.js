@@ -1,3 +1,13 @@
-import axios from "axios";
+import Router from "./Router";
 
-console.log("this is the app running");
+const router = new Router();
+
+const route = process.argv[2].substring(1);
+
+if (!route) {
+  throw new Error(
+    "No route was passed! Please pass a valid route as an arg, leading with a double slash '//'!"
+  );
+}
+
+router.delegate(route);
